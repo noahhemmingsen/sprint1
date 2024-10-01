@@ -1,17 +1,34 @@
-[gd_scene load_steps=3 format=3 uid="uid://dtn1kn2egb0df"]
+[gd_scene load_steps=5 format=3 uid="uid://q2tp6fj5j4l2"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_28nh7"]
+[sub_resource type="BoxMesh" id="BoxMesh_pncju"]
 size = Vector3(50, 1, 50)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_yb7kx"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_pte3a"]
 size = Vector3(50, 1, 50)
+
+[sub_resource type="BoxMesh" id="BoxMesh_1g04c"]
+size = Vector3(2.5, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qt8ok"]
+size = Vector3(2.5, 1, 1)
 
 [node name="game" type="Node3D"]
 
 [node name="ground" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_28nh7")
+mesh = SubResource("BoxMesh_pncju")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ground"]
-shape = SubResource("BoxShape3D_yb7kx")
+[node name="collision-shape" type="CollisionShape3D" parent="ground"]
+shape = SubResource("BoxShape3D_pte3a")
 
 [node name="car" type="Node3D" parent="."]
+
+[node name="car-body" type="VehicleBody3D" parent="car"]
+
+[node name="chassis" type="MeshInstance3D" parent="car/car-body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.46939, 0)
+mesh = SubResource("BoxMesh_1g04c")
+
+[node name="collision-shape" type="CollisionShape3D" parent="car/car-body/chassis"]
+shape = SubResource("BoxShape3D_qt8ok")
+
+[node name="VehicleWheel3D" type="VehicleWheel3D" parent="car"]
