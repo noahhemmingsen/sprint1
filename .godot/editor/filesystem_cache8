@@ -1,5 +1,9 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1727754947
+::res://::1727756762
+CAR Model.glb::PackedScene::1826537766444845025::1727756762::1727756765::1::::<><>::uid://du0e03ciw82pv::::res://CAR Model_Lamborginhi Aventador_diffuse.jpg<>uid://c6g84nxer86uv::::res://CAR Model_Lamborginhi Aventador_spec.png
 car.tscn::PackedScene::6948400478307993914::1727754858::0::1::::<><>::
-game.tscn::PackedScene::1179941743736541453::1727754670::0::1::::<><>::
+game.tscn::PackedScene::1179941743736541453::1727756460::0::1::::<><>::res://car-script.gd<>res://collision_shape.gd
 icon.svg::CompressedTexture2D::6292085444642934068::1727752537::1727754948::1::::<><>::
+collision_shape.gd::GDScript::-1::1727755417::0::1::::<>CollisionShape3D<>::
+CAR Model_Lamborginhi Aventador_diffuse.jpg::CompressedTexture2D::8614937354647757927::1727756763::1727756766::1::::<><>::
+CAR Model_Lamborginhi Aventador_spec.png::CompressedTexture2D::6963137954013946385::1727756764::1727756766::1::::<><>::
