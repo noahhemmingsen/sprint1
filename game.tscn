@@ -1,9 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://q2tp6fj5j4l2"]
+[gd_scene load_steps=8 format=3 uid="uid://q2tp6fj5j4l2"]
 
 [ext_resource type="PackedScene" uid="uid://c584e1whpcyle" path="res://car.tscn" id="1_gmei2"]
 [ext_resource type="Script" path="res://collision_shape.gd" id="1_h2w5l"]
+[ext_resource type="Texture2D" uid="uid://du0e03ciw82pv" path="res://CAR Model_Lamborginhi Aventador_diffuse.jpg" id="2_ew5w6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oa53k"]
+albedo_texture = ExtResource("2_ew5w6")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5xrfd"]
+albedo_texture = ExtResource("2_ew5w6")
 
 [sub_resource type="BoxMesh" id="BoxMesh_pncju"]
+material = SubResource("StandardMaterial3D_5xrfd")
 size = Vector3(5000, 1, 5000)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pte3a"]
@@ -12,14 +20,16 @@ size = Vector3(50000, 1, 500000)
 [node name="game" type="Node3D"]
 
 [node name="car" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.0151, 0.477342, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.0151, 0.477342, -238.17)
 
 [node name="vehicle" parent="car" instance=ExtResource("1_gmei2")]
 transform = Transform3D(-0.182325, 0.00538354, -0.170964, 0.00668595, 0.249909, 0.000739232, 0.170918, -0.00403311, -0.182403, 168.907, 23.3136, 61.3254)
+gravity_scale = 2.231
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
 [node name="ground" type="MeshInstance3D" parent="StaticBody3D"]
+material_override = SubResource("StandardMaterial3D_oa53k")
 mesh = SubResource("BoxMesh_pncju")
 skeleton = NodePath("../..")
 
