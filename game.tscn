@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtn1kn2egb0df"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_28nh7"]
+size = Vector3(50, 1, 50)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yb7kx"]
+size = Vector3(50, 1, 50)
+
+[node name="game" type="Node3D"]
+
+[node name="ground" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_28nh7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground"]
+shape = SubResource("BoxShape3D_yb7kx")
+
+[node name="car" type="Node3D" parent="."]
